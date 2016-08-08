@@ -73,7 +73,7 @@
 	            details: paymentResponse.details
 	        });
 
-	        document.querySelector("#code").innerText = json;
+	        document.querySelector("#result").innerText = json;
 
 	        paymentResponse.complete("fail");
 	    });
