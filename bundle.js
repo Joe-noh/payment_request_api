@@ -72,6 +72,9 @@
 
 	    var payment = new PaymentRequest(methodData, details, options);
 
+	    payment.addEventListener("shippingaddresschange", function(e) {});
+	    payment.addEventListener("shippingoptionchange", function(e) {});
+
 	    payment.show().then(function(paymentResponse) {
 	        var json = JSON.stringify({
 	            method: paymentResponse.methodName,
