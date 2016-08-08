@@ -64,16 +64,8 @@
 	            amount: {currency: "JPY", value : "108"}
 	        }
 	    };
-	    var options = {
-	        requestPayerEmail: true,
-	        requestPayerPhone: true,
-	        requestShipping: true
-	    };
 
-	    var payment = new PaymentRequest(methodData, details, options);
-
-	    payment.addEventListener("shippingaddresschange", function(e) {});
-	    payment.addEventListener("shippingoptionchange", function(e) {});
+	    var payment = new PaymentRequest(methodData, details);
 
 	    payment.show().then(function(paymentResponse) {
 	        var json = JSON.stringify({
