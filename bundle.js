@@ -51,12 +51,12 @@
 	    var details = {
 	        displayItems: [
 	            {
-	              label: "メロンパン",
-	              amount: {currency: "JPY", value : "100"}
+	                label: "メロンパン",
+	                amount: {currency: "JPY", value : "100"}
 	            },
 	            {
-	              label: "消費税",
-	              amount: {currency: "JPY", value : "8"}
+	                label: "消費税",
+	                amount: {currency: "JPY", value : "8"}
 	            }
 	        ],
 	        total:  {
@@ -64,8 +64,13 @@
 	            amount: {currency: "JPY", value : "108"}
 	        }
 	    };
+	    var optoins = {
+	        requestPayerEmail: true,
+	        requestPayerPhone: true,
+	        requestShipping: true
+	    };
 
-	    var payment = new PaymentRequest(methodData, details);
+	    var payment = new PaymentRequest(methodData, details, options);
 
 	    payment.show().then(function(paymentResponse) {
 	        var json = JSON.stringify({
