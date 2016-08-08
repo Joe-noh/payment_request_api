@@ -44,11 +44,9 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	var button = document.getElementById("purchase");
-
-	button.onclick = function () {
+	function checkout() {
 	    var payment = new PaymentRequest(
-	        [{supportedMethods: ["visa","bitcoin"]}],
+	        [{supportedMethods: ["visa", "bitcoin"]}],
 	        {
 	            displayItems: [
 	                {
@@ -69,6 +67,8 @@
 
 	    payment.show();
 	}
+
+	document.querySelector("#purchase").addEventListener("click", checkout);
 
 
 /***/ }
