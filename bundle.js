@@ -67,7 +67,7 @@
 	        }
 	    );
 
-	    console.log(payment);
+	    payment.show();
 	}
 
 
