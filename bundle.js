@@ -52,16 +52,16 @@
 	        displayItems: [
 	            {
 	              label: "メロンパン",
-	              amount: {currency: "JPY", value : "100.00"}
+	              amount: {currency: "JPY", value : "100"}
 	            },
 	            {
 	              label: "消費税",
-	              amount: {currency: "JPY", value : "8.00"}
+	              amount: {currency: "JPY", value : "8"}
 	            }
 	        ],
 	        total:  {
 	            label: "合計",
-	            amount: {currency: "JPY", value : "108.00"}
+	            amount: {currency: "JPY", value : "108"}
 	        }
 	    };
 
