@@ -1,25 +1,36 @@
-var button = document.getElementById("purchase");
-
-button.onclick = function () {
-    var payment = new PaymentRequest(
-        [{supportedMethods: ["visa","bitcoin"]}],
-        {
-            displayItems: [
-                {
-                  label: "Sub-total",
-                  amount: { currency: "USD", value : "55.00" }, // US$55.00
-                },
-                {
-                  label: "Sales Tax",
-                  amount: { currency: "USD", value : "5.00" }, // US$5.00
-                }
-            ],
-            total:  {
-                label: "Total due",
-                amount: { currency: "USD", value : "60.00" }, // US$60.00
+function checkout() {
+    var methodData = [
+      {supportedMethods: ["visa", "bitcoin"]}
+    ];
+    var details = {
+        displayItems: [
+            {
+              label: "メロンパン",
+              amount: {currency: "JPY", value : "100.00"}
+            },
+            {
+              label: "消費税",
+              amount: {currency: "JPY", value : "8.00"}
             }
+        ],
+        total:  {
+            label: "合計",
+            amount: {currency: "JPY", value : "108.00"}
         }
-    );
+    };
 
-    console.log(payment);
+    var payment = new PaymentRequest(methodData, details);
+
+    payment.show().then(function(paymentResponse) {
+        var json = JSON.stringify({
+            method: paymentResponse.methodName,
+            details: paymentResponse.details
+        }, null, 2);
+
+        document.querySelector("#result").innerText = json;
+
+        paymentResponse.complete("fail");
+    });
 }
+
+document.querySelector("#purchase").addEventListener("click", checkout);
