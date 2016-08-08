@@ -1,0 +1,21 @@
+{
+  "name": "payment_request_api",
+  "version": "1.0.0",
+  "description": "Let's Play with Payment Request API",
+  "scripts": {
+    "start": "webpack-dev-server -w",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joe-noh/payment_request_api.git"
+  },
+  "author": "Joe Honzawa <goflb.jh@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
