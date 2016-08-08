@@ -64,7 +64,7 @@
 	            amount: {currency: "JPY", value : "108"}
 	        }
 	    };
-	    var optoins = {
+	    var options = {
 	        requestPayerEmail: true,
 	        requestPayerPhone: true,
 	        requestShipping: true
