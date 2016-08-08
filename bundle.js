@@ -52,16 +52,16 @@
 	        displayItems: [
 	            {
 	              label: "メロンパン",
-	              amount: {currency: "JPY", value : "0.00"}
+	              amount: {currency: "JPY", value : "100.00"}
 	            },
 	            {
-	              label: "内税",
-	              amount: {currency: "JPY", value : "0.00"}
+	              label: "消費税",
+	              amount: {currency: "JPY", value : "8.00"}
 	            }
 	        ],
 	        total:  {
 	            label: "合計",
-	            amount: {currency: "JPY", value : "0.00"}
+	            amount: {currency: "JPY", value : "108.00"}
 	        }
 	    };
 
@@ -71,7 +71,7 @@
 	        var json = JSON.stringify({
 	            method: paymentResponse.methodName,
 	            details: paymentResponse.details
-	        });
+	        }, null, 2);
 
 	        document.querySelector("#result").innerText = json;
 
